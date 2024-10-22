@@ -1,0 +1,27 @@
+# XPlane DREF map file for a multirotor
+# assumes: up to 8 motor output from arducopter
+
+{
+    "settings" : { "debug" : 0 },
+
+    "sim/operation/override/override_joystick" : { "type" : "fixed", "value" : 1 },
+    "sim/operation/override/override_throttles" : { "type" : "fixed", "value" : 1 },
+    "sim/operation/override/override_flightcontrol" : { "type" : "fixed", "value" : 0 },
+
+    # forward each throttle, up to 8 engines
+    "sim/flightmodel/engine/ENGN_thro_use[0]" : { "type" : "range", "range" : 1, "channel" : 3 },
+    "sim/flightmodel/engine/ENGN_thro_use[1]" : { "type" : "range", "range" : 1, "channel" : 1 },
+    "sim/flightmodel/engine/ENGN_thro_use[2]" : { "type" : "range", "range" : 1, "channel" : 2 },
+    "sim/flightmodel/engine/ENGN_thro_use[3]" : { "type" : "range", "range" : 1, "channel" : 4 },
+
+
+    # joystick inputs
+    "axis4" : { "type" : "joyaxis", "channel" : 4, "input_min" : 0.8, "input_max" : 0.2 },
+    "axis3" : { "type" : "joyaxis", "channel" : 3, "input_min" : 0.8, "input_max" : 0.2 },
+    "axis1" : { "type" : "joyaxis", "channel" : 2, "input_min" : 0.8, "input_max" : 0.2 },
+    "axis2" : { "type" : "joyaxis", "channel" : 1, "input_min" : 0.2, "input_max" : 0.8 },
+    "button1" : { "channel" : 5, "mask" : 1 },
+    "axis5" : { "type" : "joyaxis", "channel" : 6, "input_min" : 0.8, "input_max" : 0.2},
+    "button3" : { "type" : "joybutton", "channel" : 7, "mask" : 24 },
+    "button4" : { "type" : "joybutton", "channel" : 8, "mask" : 4 }
+}
