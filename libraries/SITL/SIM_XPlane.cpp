@@ -39,6 +39,8 @@ extern const AP_HAL::HAL& hal;
 
 #if APM_BUILD_TYPE(APM_BUILD_Heli)
 #define XPLANE_JSON "xplane_heli.json"
+#elif APM_BUILD_TYPE(APM_BUILD_ArduCopter)
+#define XPLANE_JSON "xplane_copter.json"
 #else
 #define XPLANE_JSON "xplane_plane.json"
 #endif
